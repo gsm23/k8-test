@@ -11,8 +11,9 @@ node{
   //checkout scm
   //Stage 1 : Test
   stage('Test') {
+   sh("rm -rf petstore if [[ -d petstore ]]")
    sh("git clone https://github.com/gcpcloud/petstore.git && cd petstore && ./mvnw test" )
-    sh("cd .. && rm -rf petstore")
+   sh("cd .. && rm -rf petstore")
   }
   //Stage 1 : Build the docker image.
   stage('Build image') {
