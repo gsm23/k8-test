@@ -1,6 +1,6 @@
 node{
   //Define all variables
-  def project = 'my-project'
+  def project = 'dmgcp-foundation'
   def appName = 'my-first-microservice'
   def serviceName = "${appName}-backend"  
   def imageVersion = 'development'
