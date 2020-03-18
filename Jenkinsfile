@@ -8,8 +8,11 @@ node{
   def imageTag = "gcr.io/${project}/${appName}:${imageVersion}"
   
   //Checkout Code from Git
-  checkout scm
-  
+  //checkout scm
+  //Stage 1 : Test
+  stage('Test') {
+   sh("git clone https://github.com/gcpcloud/petstore.git && cd petstore && ./mvnw test" ) 
+  }
   //Stage 1 : Build the docker image.
   stage('Build image') {
       sh("docker build -t ${imageTag} .")
