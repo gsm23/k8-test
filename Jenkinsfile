@@ -11,6 +11,7 @@ node{
   //checkout scm
   //Stage 1 : Test
   stage('Test') {
+    sh("rm -rf petstore")
    sh("git clone https://github.com/gcpcloud/petstore.git && cd petstore && ./mvnw test" )
     sh("cd .. && rm -rf petstore")
   }
