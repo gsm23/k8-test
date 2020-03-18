@@ -3,9 +3,9 @@ node{
   def project = 'dmgcp-foundation'
   def appName = 'my-first-microservice'
   def serviceName = "${appName}-backend"  
-  def imageVersion = 'development'
+  def imageVersion = 'latest'
   def namespace = 'development'
-  def imageTag = "gcr.io/${project}/${appName}:${imageVersion}.${env.BUILD_NUMBER}"
+  def imageTag = "gcr.io/${project}/${appName}:${imageVersion}"
   
   //Checkout Code from Git
   checkout scm
